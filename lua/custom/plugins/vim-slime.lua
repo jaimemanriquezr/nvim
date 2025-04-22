@@ -20,6 +20,7 @@ return {
     vim.keymap.set('n', 'gz', '<Plug>SlimeMotionSend', { remap = true, silent = false })
     vim.keymap.set('n', 'gzz', '<Plug>SlimeLineSend', { remap = true, silent = false })
     vim.keymap.set('x', 'gz', '<Plug>SlimeRegionSend', { remap = true, silent = false })
-    vim.keymap.set('n', 'gzc', '<Plug>SlimeConfig', { remap = true, silent = false })
+    vim.keymap.set('n', 'gzc', '<Plug>SlimeSendCell', { remap = true, silent = false })
+    vim.keymap.set('n', 'gzC', '<Plug>SlimeConfig', { remap = true, silent = false })
   end,
 }
