@@ -4,6 +4,10 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
+if vim.g.vscode then
+  vim.keymap.set('i', '<C-z>', '<C-c>')
+end
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 --  For more options, you can see `:help option-list`
@@ -157,7 +161,7 @@ require('lazy').setup(
         vim.g.vimtex_view_method = 'zathura'
         vim.g_vimtex_view_general_viewer = 'okular'
         vim.g.vimtex_view_general_options = '--unique file:@pdf#src:@line@tex'
-        --vim.g.vimtex_compiler_method = 'pdflatex'
+        vim.g.vimtex_compiler_method = 'latexmk'
       end,
     },
 
@@ -369,19 +373,21 @@ require('lazy').setup(
                 callback = vim.lsp.buf.document_highlight,
               })
 
-              vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-                buffer = event.buf,
-                group = highlight_augroup,
-                callback = vim.lsp.buf.clear_references,
-              })
+              if not vim.g.vscode then
+                vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+                  buffer = event.buf,
+                  group = highlight_augroup,
+                  callback = vim.lsp.buf.clear_references,
+                })
 
-              vim.api.nvim_create_autocmd('LspDetach', {
-                group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
-                callback = function(event2)
-                  vim.lsp.buf.clear_references()
-                  vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
-                end,
-              })
+                vim.api.nvim_create_autocmd('LspDetach', {
+                  group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
+                  callback = function(event2)
+                    vim.lsp.buf.clear_references()
+                    vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
+                  end,
+                })
+              end
             end
 
             if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
@@ -687,6 +693,7 @@ require('lazy').setup(
           -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
           --  If you are experiencing weird indenting issues, add the language to
           --  the list of additional_vim_regex_highlighting and disabled languages for indent.
+          disable = { 'latex' },
           additional_vim_regex_highlighting = { 'ruby' },
         },
         indent = { enable = true, disable = { 'ruby' } },
@@ -731,6 +738,3 @@ require('lazy').setup(
     },
   }
 )
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
