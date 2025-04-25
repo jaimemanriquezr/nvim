@@ -103,13 +103,13 @@ vim.api.nvim_command 'autocmd TermOpen * nnoremap <buffer> <C-c> i<C-c>'
 vim.api.nvim_command 'augroup END'
 
 -- [JAIME] Open Neotree (and a Terminal, maybe) when starting Neovim
-vim.api.nvim_command 'augroup neovim_start'
-vim.api.nvim_command 'autocmd!'
-vim.api.nvim_command 'autocmd VimEnter * execute "Neotree"'
-vim.api.nvim_command 'autocmd VimEnter * wincmd l'
---vim.api.nvim_command 'autocmd VimEnter * execute "12split | terminal"'
---vim.api.nvim_command 'autocmd VimEnter * wincmd k'
-vim.api.nvim_command 'augroup END'
+-- vim.api.nvim_command 'augroup neovim_start'
+-- vim.api.nvim_command 'autocmd!'
+-- -- vim.api.nvim_command 'autocmd VimEnter * execute "Neotree"'
+-- -- vim.api.nvim_command 'autocmd VimEnter * wincmd l'
+-- --vim.api.nvim_command 'autocmd VimEnter * execute "12split | terminal"'
+-- --vim.api.nvim_command 'autocmd VimEnter * wincmd k'
+-- vim.api.nvim_command 'augroup END'
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
