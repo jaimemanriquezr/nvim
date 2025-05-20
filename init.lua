@@ -8,6 +8,8 @@ if vim.g.vscode then
   vim.keymap.set('i', '<C-z>', '<C-c>')
 end
 
+vim.opt.termguicolors = true
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 --  For more options, you can see `:help option-list`
@@ -159,9 +161,10 @@ require('lazy').setup(
       init = function()
         -- VimTeX configuration goes here, e.g.
         vim.g.vimtex_view_method = 'zathura'
-        vim.g_vimtex_view_general_viewer = 'okular'
+        vim.g.vimtex_view_general_viewer = 'okular'
         vim.g.vimtex_view_general_options = '--unique file:@pdf#src:@line@tex'
         vim.g.vimtex_compiler_method = 'latexmk'
+
         -- vim.g.vimtex_syntax_conceal = true
       end,
     },
@@ -664,17 +667,17 @@ require('lazy').setup(
         -- Simple and easy statusline.
         --  You could remove this setup call if you don't like it,
         --  and try some other statusline plugin
-        local statusline = require 'mini.statusline'
-        -- set use_icons to true if you have a Nerd Font
-        statusline.setup { use_icons = vim.g.have_nerd_font }
-
-        -- You can configure sections in the statusline by overriding their
-        -- default behavior. For example, here we set the section for
-        -- cursor location to LINE:COLUMN
-        ---@diagnostic disable-next-line: duplicate-set-field
-        statusline.section_location = function()
-          return '%2l:%-2v'
-        end
+        -- local statusline = require 'mini.statusline'
+        -- -- set use_icons to true if you have a Nerd Font
+        -- statusline.setup { use_icons = vim.g.have_nerd_font }
+        --
+        -- -- You can configure sections in the statusline by overriding their
+        -- -- default behavior. For example, here we set the section for
+        -- -- cursor location to LINE:COLUMN
+        -- ---@diagnostic disable-next-line: duplicate-set-field
+        -- statusline.section_location = function()
+        --   return '%2l:%-2v'
+        -- end
 
         -- ... and there is more!
         --  Check out: https://github.com/echasnovski/mini.nvim
