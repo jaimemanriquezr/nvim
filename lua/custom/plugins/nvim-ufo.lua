@@ -14,6 +14,7 @@ return {
     local ftMap = {
       vim = 'indent',
       python = { 'indent' },
+      matlab = { 'indent' },
       git = '',
     }
     require('ufo').setup {
