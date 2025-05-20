@@ -14,7 +14,9 @@ vim.opt.termguicolors = true
 -- See `:help vim.opt`
 --  For more options, you can see `:help option-list`
 vim.opt.number = true
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = 'number'
+
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
