@@ -10,4 +10,7 @@ return {
       char = '▏',
     },
   },
+  keys = {
+    { '<leader>b', '<cmd>IBLToggle<cr>', desc = 'Toggles indent-blankline on and off' },
+  },
 }
