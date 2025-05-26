@@ -1,0 +1,11 @@
+{
+    "Frame (beamer)": {
+        "prefix": ["frame"],
+        "body": [
+            "\\begin{frame}{$1:frame title}",
+            "\t$0",
+            "\\end{frame}"
+        ],
+        "description": "Insert bold text."
+    },
+}

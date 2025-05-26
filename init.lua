@@ -556,10 +556,12 @@ require('lazy').setup(
         'hrsh7th/cmp-path',
       },
       config = function()
+        require('luasnip.loaders.from_vscode').lazy_load { paths = { './snippets/vscode' } }
         -- See `:help cmp`
         local cmp = require 'cmp'
         local luasnip = require 'luasnip'
         luasnip.config.setup {}
+        require('luasnip').config.setup { store_selection_keys = '<Tab>' }
 
         cmp.setup {
           snippet = {
@@ -586,7 +588,7 @@ require('lazy').setup(
             -- Accept ([y]es) the completion.
             --  This will auto-import if your LSP supports it.
             --  This will expand snippets if the LSP sent a snippet.
-            -- ['<C-y>'] = cmp.mapping.confirm { select = true },
+            ['<C-y>'] = cmp.mapping.confirm { select = true },
             ['<C-]>'] = cmp.mapping.confirm { select = true },
 
             -- If you prefer more traditional completion keymaps,
@@ -633,6 +635,14 @@ require('lazy').setup(
             { name = 'path' },
           },
         }
+
+        cmp.setup.filetype('tex', {
+          sources = {
+            { name = 'vimtex' },
+            { name = 'luasnip' },
+            { name = 'buffer' },
+          },
+        })
       end,
     },
     { -- You can easily change to a different colorscheme.
