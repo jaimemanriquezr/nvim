@@ -1,6 +1,7 @@
 -- feline
 -- https://github.com/famiu/feline.nvim
 -- A minimal, stylish and customizable statusline for Neovim written in Lua
+
 return {
   'famiu/feline.nvim',
   config = function()
