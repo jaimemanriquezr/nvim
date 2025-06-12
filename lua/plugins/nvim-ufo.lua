@@ -1,5 +1,7 @@
 -- nvim-ufo
 -- https://github.com/kevinhwang91/nvim-ufo
+-- Not UFO in the sky, but an ultra fold in Neovim.
+
 return {
   'kevinhwang91/nvim-ufo',
   dependencies = {
@@ -17,6 +19,7 @@ return {
       matlab = { 'indent' },
       git = '',
     }
+
     require('ufo').setup {
       open_fold_hl_timeout = 150,
       close_fold_kinds_for_ft = {

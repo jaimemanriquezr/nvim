@@ -1,5 +1,6 @@
 -- vim-slime
 -- https://github.com/jpalardy/vim-slime
+-- A vim plugin to give you some slime.
 
 return {
   'jpalardy/vim-slime',

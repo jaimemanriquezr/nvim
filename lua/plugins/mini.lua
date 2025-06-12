@@ -1,6 +1,7 @@
 -- mini.nvim
 -- https://github.com/echasnovski/mini.nvim
 -- Collection of small independent Lua modules
+
 return {
   'echasnovski/mini.nvim',
   config = function()

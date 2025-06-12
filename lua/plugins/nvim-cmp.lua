@@ -1,6 +1,7 @@
 -- nvim-cmp
 -- https://github.com/hrsh7th/nvim-cmp
 -- Autocompletion
+
 return {
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',

@@ -1,6 +1,7 @@
 -- conform
 -- https://github.com/stevearc/conform.nvim
 -- Autoformat
+
 return {
   'stevearc/conform.nvim',
   event = { 'BufWritePre' },

@@ -1,6 +1,7 @@
 -- telescope
 -- https://github.com/nvim-telescope/telescope.nvim
 -- Find, Filter, Preview, Pick.
+
 return { -- Fuzzy Finder (files, lsp, etc)
   'nvim-telescope/telescope.nvim',
   event = 'VimEnter',

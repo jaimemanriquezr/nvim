@@ -1,6 +1,7 @@
 -- vimtex
 -- https://github.com/lervag/vimtex
 -- A modern Vim and neovim filetype plugin for LaTeX files
+
 return {
   'lervag/vimtex',
   lazy = false, -- we don't want to lazy load VimTeX
