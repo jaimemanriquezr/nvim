@@ -17,6 +17,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- https://www.reddit.com/r/neovim/comments/1ct2w2h/comment/l4bgvn1/
+-- Disable highlighting when moving away from search
+vim.api.nvim_create_autocmd('CursorMoved', {
+  group = vim.api.nvim_create_augroup('auto-hlsearch', { clear = true }),
+  callback = function()
+    if vim.v.hlsearch == 1 and vim.fn.searchcount().exact_match == 0 then
+      vim.schedule(function()
+        vim.cmd.nohlsearch()
+      end)
+    end
+  end,
+})
+
 -- Open Neotree (and a Terminal, maybe) when starting Neovim
 -- vim.api.nvim_command 'augroup neovim_start'
 -- vim.api.nvim_command 'autocmd!'
