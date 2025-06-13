@@ -14,8 +14,19 @@ return {
   keys = {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
-  opts = {
-    filesystem = {
+  config = function()
+    vim.diagnostic.config {
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = '',
+          [vim.diagnostic.severity.WARN] = '',
+          [vim.diagnostic.severity.INFO] = '',
+          [vim.diagnostic.severity.HINT] = '󰌵',
+        },
+      },
+    }
+
+    require('neo-tree').setup {
       window = {
         position = 'left',
         width = 20,
@@ -23,6 +34,6 @@ return {
           ['\\'] = 'close_window',
         },
       },
-    },
-  },
+    }
+  end,
 }
