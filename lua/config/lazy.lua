@@ -20,6 +20,8 @@ require('lazy').setup {
     -- { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
     { import = 'plugins' },
     { import = 'plugins.editor' },
+    { import = 'plugins.explorer' },
+    { import = 'plugins.lsp' },
     { import = 'plugins.git' },
   },
   checker = {

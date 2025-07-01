@@ -13,7 +13,7 @@ return {
         zsh = {
           icon = '',
           color = '#428850',
-          cterm_color = '65',
+          cterm_color = '61',
           name = 'Zsh',
         },
       },
@@ -47,6 +47,16 @@ return {
           icon = '',
           color = '#81e043',
           name = 'Log',
+        },
+        ['m'] = {
+          icon = '',
+          color = '#f37340',
+          name = 'MATLAB',
+        },
+        ['mat'] = {
+          icon = '',
+          color = '#f3e940',
+          name = 'MATFile',
         },
       },
       -- same as `override` but specifically for operating system
