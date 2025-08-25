@@ -1,1 +1,1 @@
-My personal fork of kickstart.nvim
+Config for nvim
