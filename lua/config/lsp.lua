@@ -17,7 +17,7 @@ for _, file in ipairs(vim.fn.readdir(lsp_path)) do
 		local ls_name = file:gsub('%.lua$', '')
 		vim.lsp.enable(ls_name)
 		-- extend basic config (from nvim-lspconfig) with local config file
-		-- vim.lsp.config(ls_name, require('lsp.' .. ls_name))
+		vim.lsp.config(ls_name, require('lsp.' .. ls_name))
 	end
 end
 
