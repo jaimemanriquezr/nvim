@@ -6,6 +6,5 @@ nvim
 spell/
 lazy-lock.json
 
-package.json
 package-lock.json
 node_modules/

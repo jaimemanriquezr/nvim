@@ -1,0 +1,15 @@
+{
+  "name": "snippets",
+  "author": "Jaime Manriquez",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "tex",
+        "path": "./latex.json"
+      }
+    ]
+  }
+}
