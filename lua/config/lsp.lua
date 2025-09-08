@@ -59,7 +59,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 		map('gf', function()
 			vim.lsp.buf.format {
-				timeout_ms = 20000,
+				timeout_ms = 1000,
 			}
 		end, 'Format buffer')
 
@@ -111,7 +111,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 				group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
 				buffer = args.buf,
 				callback = function()
-					vim.lsp.buf.format { bufnr = args.buf, id = client.id, timeout_ms = 20000 }
+					vim.lsp.buf.format { bufnr = args.buf, id = client.id, timeout_ms = 1000 }
 				end,
 			})
 		end
